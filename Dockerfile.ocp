@@ -1,8 +1,8 @@
 FROM rhel8:latest
 
-RUN yum update -y && \
-    yum install -y openstack-ironic-python-agent lshw smartmontools && \
-    yum clean all
+RUN dnf update -y && \
+    dnf install -y openstack-ironic-python-agent lshw smartmontools iproute python-hardware && \
+    dnf clean all
 
 # NOTE(TheJulia/juliakreger): this command defaults to using multicast
 # dns lookups.
