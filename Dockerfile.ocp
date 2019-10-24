@@ -1,7 +1,7 @@
 FROM ubi8
 
 RUN yum update -y && \
-    yum install -y openstack-ironic-python-agent lshw smartmontools iproute python-hardware && \
+    yum install -y openstack-ironic-python-agent lshw smartmontools iproute python3-hardware && \
     yum clean all
 
 # NOTE(TheJulia/juliakreger): this command defaults to using multicast
