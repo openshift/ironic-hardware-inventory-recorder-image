@@ -7,3 +7,5 @@ RUN yum update -y && \
 COPY ./runironic-agent.sh /bin/runironic-agent
 
 ENTRYPOINT ["/bin/runironic-agent"]
+
+LABEL io.openshift.release.operator true
