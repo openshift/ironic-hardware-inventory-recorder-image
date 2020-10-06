@@ -1,8 +1,9 @@
 FROM registry.svc.ci.openshift.org/ocp/builder:rhel-8-base-openshift-4.6
 
-RUN yum update -y && \
-    yum install -y openstack-ironic-python-agent lshw smartmontools iproute python3-hardware && \
-    yum clean all
+RUN dnf update -y && \
+    dnf install -y openstack-ironic-python-agent lshw smartmontools iproute python3-hardware && \
+    dnf clean all && \
+    rm -rf /var/cache/{yum,dnf}/*
 
 COPY ./runironic-agent.sh /bin/runironic-agent
 
