@@ -1,4 +1,4 @@
-FROM registry.svc.ci.openshift.org/ocp/builder:rhel-8-base-openshift
+FROM registry.ci.openshift.org/ocp/builder:rhel-8-base-openshift-4.7
 
 RUN dnf update -y && \
     dnf install -y openstack-ironic-python-agent lshw smartmontools iproute python3-hardware && \
